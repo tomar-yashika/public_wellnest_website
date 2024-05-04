@@ -11,7 +11,7 @@ from streamlit_option_menu import option_menu
 
 #loading the saved models
 
-diabetes_model = pickle.load(open('diabetes_model(2).sav', 'rb'))
+diabetes_model = pickle.load(open('diabetes_model_2.sav', 'rb'))
 heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
 Parkinsons_model = pickle.load(open('Parkinsons_model.sav', 'rb'))
 breast_cancer_model = pickle.load(open('breast_cancer_model.sav', 'rb'))
@@ -71,7 +71,7 @@ if(selected == 'Diabetes Prediction'):
     # creation a button for prediction
     
     if st.button('Diabetes Test Result'):
-        diab_prediction = diabetes_model(2).predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
+        diab_prediction = diabetes_model_2.predict([[Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age]])
         
         if (diab_prediction[0] == 1):
           diab_diagnosis = 'The person is diabetic'
